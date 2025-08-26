@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 moveDirection { get; private set; }
     public Vector2 previousDir { get; private set; } = Vector2.right;
+    Vector2 dashDirection;
 
     SpriteRenderer sprite;
     Rigidbody2D rb;
@@ -114,23 +115,35 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (isDashing) return;
-        //horizontalInput = Input.GetAxis("Horizontal");
-        //verticalInput = Input.GetAxis("Vertical");
-        horizontalInput = joystick.Horizontal;
-        verticalInput = joystick.Vertical;
-
-        anim.SetFloat("XVelocity", horizontalInput);
-        anim.SetFloat("YVelocity", verticalInput);
-
-        if (horizontalInput != 0 || verticalInput != 0)
+        //if (isDashing) return;
+        if (!Application.isMobilePlatform)
         {
-            anim.SetBool("IsMoving", true);
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
         }
         else
         {
-            anim.SetBool("IsMoving", false);
+            horizontalInput = joystick.Horizontal;
+            verticalInput = joystick.Vertical;
         }
+
+
+        if (!isDashing) 
+        {
+            anim.SetFloat("XVelocity", horizontalInput);
+            anim.SetFloat("YVelocity", verticalInput);
+
+            if (horizontalInput != 0 || verticalInput != 0)
+            {
+                anim.SetBool("IsMoving", true);
+            }
+            else
+            {
+                anim.SetBool("IsMoving", false);
+            }
+        }
+
+       
 
         if (currentHp <= 0)
         {
@@ -138,7 +151,7 @@ public class PlayerController : MonoBehaviour
         }
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
 
-        moveDirection = new Vector2(joystick.Horizontal, joystick.Vertical).normalized;
+        moveDirection = new Vector2(horizontalInput, verticalInput).normalized;
         if(moveDirection != Vector2.zero)
         {
             previousDir = moveDirection;
@@ -151,7 +164,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isDashing) return;
+        if (isDashing)
+        {
+            rb.velocity = dashDirection * dashSpeed;
+            return;
+        }
         rb.velocity = new Vector3(horizontalInput * speed, verticalInput * speed);
 
     }
@@ -252,8 +269,7 @@ public class PlayerController : MonoBehaviour
         dust.transform.position = transform.position;
         dust.Play();
         AudioManager.instance.PlaySound(AudioManager.instance.dash);
-
-        rb.velocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
+        dashDirection = moveDirection;
         dashImage.fillAmount = 1f;
 
         yield return new WaitForSeconds(dashDuration);

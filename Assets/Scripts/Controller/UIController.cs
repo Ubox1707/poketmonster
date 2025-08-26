@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     [SerializeField] TextMeshProUGUI expText;
     [SerializeField] TextMeshProUGUI timer;
     [SerializeField] public Slider bossHpSlider;
+    [SerializeField] GameObject dashButton;
     [Header("Warning")]
     public TextMeshProUGUI rageCount;
     public TextMeshProUGUI bossCount;
@@ -39,7 +40,23 @@ public class UIController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-      
+    private void Update()
+    {
+        SwitchPlatform(Application.isMobilePlatform);
+    }
+    public void SwitchPlatform(bool isMobile)
+    {
+        if (isMobile)
+        {
+            FindObjectOfType<PlayerController>().joystick.gameObject.SetActive(true);
+            dashButton.SetActive(true);
+        }
+        else
+        {
+            FindObjectOfType<PlayerController>().joystick.gameObject.SetActive(false);
+            dashButton.SetActive(false);
+        }
+    }
     public void UpdateHealth()
     {
         if (PlayerController.instance != null)
@@ -88,7 +105,7 @@ public class UIController : MonoBehaviour
         List<UpgradeOption> options = UpgradeDatabase.instance.GetRandomUpgrade(2, 2);
         for (int i = 0; i < levelUpButtons.Length; i++) 
         {
-            levelUpButtons[i].SetUp(options[i]);
+            levelUpButtons[i].SetUp (options[i]);
         }
     }
     public void LevelUpClose()
