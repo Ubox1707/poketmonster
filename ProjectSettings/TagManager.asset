@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Boundaries
+  - Boss
+  - Background
+  - Ground
+  - Weapon
+  - Item
+  - Obstacle
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Boundaries
+  - Water
+  - UI
+  - Player
+  - Enemy
+  - Background
+  - Ground
+  - Grass
+  - Item
+  - Bullet
+  - Obstacle
+  - PlayerDash
+  - EnemyBody
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 456004007
+    locked: 0
+  - name: Ground
+    uniqueID: 868275643
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3580600853
+    locked: 0
+  - name: Weapon
+    uniqueID: 1948372587
+    locked: 0
+  - name: Object
+    uniqueID: 2163087557
+    locked: 0
+  - name: Player
+    uniqueID: 3957452953
+    locked: 0
+  - name: Foreground
+    uniqueID: 1374175211
+    locked: 0
+  - name: UI
+    uniqueID: 3927252279
+    locked: 0

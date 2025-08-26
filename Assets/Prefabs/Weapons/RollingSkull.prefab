@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6149492481996921874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4255389807826469543}
+  - component: {fileID: 1909279108590582890}
+  m_Layer: 0
+  m_Name: RollingSkull
+  m_TagString: Weapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4255389807826469543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149492481996921874}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0.4, z: -0.009659317}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1909279108590582890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149492481996921874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbbd090e7d49aa4681ddd32847a4d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLevel: 0
+  weaponStats:
+  - cooldown: 5
+    damage: 10
+    duration: 3
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 150
+    skullAmount: 2
+    rotateRange: 3
+    size: 1.5
+    description: First Level
+  - cooldown: 5
+    damage: 10
+    duration: 3
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 150
+    skullAmount: 2
+    rotateRange: 3
+    size: 2
+    description: Size +0.5
+  - cooldown: 5
+    damage: 10
+    duration: 3
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 150
+    skullAmount: 3
+    rotateRange: 3
+    size: 2
+    description: Amount +1
+  - cooldown: 5
+    damage: 10
+    duration: 3
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 150
+    skullAmount: 3
+    rotateRange: 5
+    size: 2
+    description: Range +2
+  - cooldown: 5
+    damage: 15
+    duration: 3
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 150
+    skullAmount: 3
+    rotateRange: 5
+    size: 2
+    description: Damage +5
+  - cooldown: 5
+    damage: 15
+    duration: 3
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 170
+    skullAmount: 3
+    rotateRange: 5
+    size: 2
+    description: Speed +20
+  - cooldown: 5
+    damage: 15
+    duration: 3
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 170
+    skullAmount: 4
+    rotateRange: 5
+    size: 2
+    description: Amount +1
+  - cooldown: 5
+    damage: 15
+    duration: 4
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 170
+    skullAmount: 4
+    rotateRange: 5
+    size: 2
+    description: Duration +1
+  - cooldown: 5
+    damage: 15
+    duration: 4
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 200
+    skullAmount: 4
+    rotateRange: 5
+    size: 2
+    description: Speed +30
+  - cooldown: 5
+    damage: 15
+    duration: 4
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 200
+    skullAmount: 5
+    rotateRange: 5
+    size: 2
+    description: Amount +1
+  - cooldown: 5
+    damage: 20
+    duration: 4
+    range: 0
+    periodDamage: 0
+    bulletSpeed: 0
+    bulletAmount: 0
+    rotateSpeed: 220
+    skullAmount: 6
+    rotateRange: 5
+    size: 3
+    description: Max Level
+  weaponIcon: {fileID: -1328663682, guid: 35880e899d451db4dbbffb5e1957982a, type: 3}
+  prefab: {fileID: 2304503395363003643, guid: 236a01b041226964c801f5754398a39a, type: 3}
